@@ -1,0 +1,122 @@
+/* الخط العام - Patrick Hand */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+    font-family: 'Patrick Hand', cursive;
+  }
+  
+  body {
+    background: #f3f5f9;
+    overflow: hidden;
+  }
+  
+  /* Hero Image */
+  #hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  #hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1.2s ease;
+  }
+  
+  /* Overlay text */
+  #overlayText {
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffffcc;
+    font-size: 22px;
+    letter-spacing: 1px;
+    animation: breathe 2.2s infinite;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  }
+  
+  @keyframes breathe {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+  }
+  
+  /* Romantic Text Box */
+  #textContainer {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90%;
+    max-width: 400px;
+    font-size: 20px;
+    line-height: 2;
+    color: #2a2a2a;
+    display: none;
+    background: rgba(243, 245, 249, 0.6); /* خلفية نصف شفافة */
+    padding: 12px;
+    border-radius: 12px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  }
+  
+  /* Ending Text */
+  #ending {
+    position: absolute;
+    bottom: 8%;
+    right: 5%;
+    font-size: 24px;
+    color: #555;
+    opacity: 0;
+    transition: opacity 2s ease;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  }
+  
+  /* Signature */
+  #signature {
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+    font-size: 26px;
+    color: #e63946;
+    opacity: 0;
+    transition: opacity 3s ease;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  }
+  
+  /* Heart Cursor */
+  #heart-cursor {
+    position: fixed;
+    font-size: 24px;
+    color: #e63946;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.08s ease;
+    z-index: 9999;
+  }
+  
+  /* Hearts */
+  .heart {
+    position: fixed;
+    font-size: 18px;
+    color: #e63946;
+    animation: fly 3.5s ease-out forwards;
+    filter: drop-shadow(0 0 6px rgba(230,57,70,0.6));
+  }
+  
+  @keyframes fly {
+    0% { transform: translate(0,0) scale(1); opacity:1; }
+    100% { transform: translate(var(--x), var(--y)) scale(0.3); opacity:0; }
+  }
+  
+  /* Responsive for mobile */
+  @media (max-width: 600px) {
+    #textContainer { font-size: 18px; right: 5%; width: 90%; }
+    #ending { font-size: 22px; right: 5%; bottom: 7%; }
+    #signature { font-size: 22px; left: 5%; bottom: 3%; }
+    #overlayText { font-size: 20px; bottom: 5%; }
+  }
+  
